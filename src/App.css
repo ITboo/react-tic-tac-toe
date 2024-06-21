@@ -1,0 +1,35 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+.app{
+  max-width: 285px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cell{
+width: 60px;
+height: 60px;
+padding: 10px;
+}
+.winner{
+  background-color: plum;
+}
+.table{
+  align-self: center;
+display: grid;
+grid-template-areas: 'a b c';
+gap: 5px;
+max-width: 190px;
+}
+
+.symbol--o{
+  color: blue;
+}
+
+.symbol--x{
+  color: red;
+}
