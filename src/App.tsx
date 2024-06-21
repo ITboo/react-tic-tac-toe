@@ -35,7 +35,7 @@ function App() {
     null,
     null,
   ]);
-  const [currentStep, setCurrentStep] = useState(SYMBOL_O);
+  const [currentStep, setCurrentStep] = useState(SYMBOL_X);
   const [winnerSequence, setWinnerSequence] = useState();
   const getSymbolClassName = (symbol: string) => {
     if (symbol === SYMBOL_O) return "symbol--o";
@@ -57,6 +57,11 @@ function App() {
     setCurrentStep(currentStep === SYMBOL_O ? SYMBOL_X : SYMBOL_O);
     setWinnerSequence(winner);
   };
+  const handleResetClick=()=>{
+    setCells(Array.from({length:9}, ()=>null));
+    setCurrentStep(SYMBOL_X);
+    setWinnerSequence(undefined);
+  }
   const winnerSymbol = winnerSequence ? cells[winnerSequence[0]] : undefined;
   return (
     <div className="app">
@@ -78,6 +83,7 @@ function App() {
           );
         })}
       </div>
+      <button onClick={handleResetClick} className="reset">Reset</button>
     </div>
   );
 }
